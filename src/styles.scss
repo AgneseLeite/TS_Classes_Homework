@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Aboreto', cursive;
+  background-image: url("https://c.pxhere.com/photos/22/a7/milky_way_space_universe_night_sky_background_astronomy_star_night-1090931.jpg!d");
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  margin-top: 3rem;
+  margin-bottom: .1rem;
+  font-size: 6rem;
+  font-weight: bold;
+  color: #23b0e3;
+}
+
+.image__carousel {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 10px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.images {
+  width: 100%;
+  padding-top: 66%;
+  max-width: 600px;
+}
+
+.image {
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-weight: bold;   
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  opacity: 0;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+}
+
+.image.active {
+  opacity: 1;
+}
+
+.nav__button {
+  position: absolute;
+  height: 100%;
+  width: 70px;
+  background-color: rgb(120, 135, 161);
+  opacity: .3;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .5;
+    transition: .2s;
+  }
+}
+
+.button--prev {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.button--next {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.button--prev::after,
+.button--next::after {
+    content: "";
+    position: absolute;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 3px;
+    width: 74%;
+    height: 7.5%;
+}
+
+.button--next::after{
+  top: 50%;
+  right: 50%;
+  transform: translate(25%, -50%) rotate(-45deg);
+}
+
+.button--prev::after {
+  top: 50%;
+  right: 50%;
+  transform: translate(75%, -50%) rotate(135deg);
+}
+
+.navigation {
+  position: absolute;
+  width: 950px;
+  margin-top: -50px;
+  display: flex;
+  justify-content: center;
+}
+
+.nav__link {
+  border: 3px solid #40D3DC;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 1s;
+
+  &:hover{
+    background: #40D3DC;
+  }
+}
+
+.nav__link:not(:last-child){
+  margin-right: 40px;
+}
+
+.slider__gallery {
+  display: flex;
+  gap: 2px;
+}
+
+.thumbnails {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.thumb-list-item {
+  display: inline-block;
+  position: relative;
+  width: 130px;
+  height: 90px;
+  z-index: 2;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.thumb-list-item img {
+  display: block;
+  width: 130px;
+  height: 100%;
+  height: 90px;
+  object-fit: contain;
+  border: 4px solid #9ab9e9;
+  background-color: #9ab9e9;
+}
+
+#main__img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.timer {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  cursor: pointer;
+
+  &:active {
+    background: transparent;
+    transform: translateY(4px);
+    transition: .3s;
+  }
+}
+
+
+
+
